@@ -1,0 +1,22 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS student_management;
+
+-- Use the database
+USE student_management;
+
+-- Create the students table
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    student_id VARCHAR(20) NOT NULL UNIQUE,
+    department VARCHAR(100) NOT NULL,
+    major VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Insert sample data
+INSERT INTO students (name, student_id, department, major, email) VALUES
+('Alice Johnson', 'S12345', 'Computer Science', 'AI and Machine Learning', 'alice@example.com'),
+('Bob Smith', 'S23456', 'Electrical Engineering', 'Power Systems', 'bob@example.com'),
+('Charlie Lee', 'S34567', 'Mechanical Engineering', 'Thermodynamics', 'charlie@example.com'),
+('Diana Green', 'S45678', 'Business Administration', 'Marketing', 'diana@example.com');
